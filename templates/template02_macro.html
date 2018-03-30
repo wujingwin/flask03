@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>macro</title>
+</head>
+<body>
+<form>
+    <label>用户名</label><input type="text" name="user_name"><br>
+    <label>邮箱</label><input type="text" name="email"><br>
+    <label>密码</label><input type="text" name="psd"><br>
+    <label>确认密码</label><input type="text" name="psd2"><br>
+    <input type="submit" value="注册">
+</form>
+
+<hr>
+
+{% import 'macro.html' as func%}
+
+<form>
+    {{ func.input(label='用户名：', name='user_name') }}
+    {{ func.input(label='邮箱：', name='email') }}
+    {{ func.input(label='密码：', type='password', name='psd') }}
+    {{ func.input(label='确认密码：', type='password', name='psd2') }}
+    {{ func.input(type='submit', value='注册') }}
+</form>
+
+{#<form>#}
+{##}
+{#    {{ input(label='用户名：', name='user_name') }}#}
+{#    {{ input(label='邮箱：', name='email') }}#}
+{#    {{ input(label='密码：', type='password', name='psd') }}#}
+{#    {{ input(label='确认密码：', type='password', name='psd2') }}#}
+{#    {{ input(type='submit', value='注册') }}#}
+{##}
+{##}
+{#</form>#}
+
+</body>
+</html>

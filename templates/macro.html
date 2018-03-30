@@ -1,0 +1,5 @@
+{#封装表单中的ｉｎｐｕｔ到宏当中#}
+{% macro input(label='',type='text',name='',value='') %}
+    <label>{{ label }}</label><input type="{{ type }}"name="{{ name }}"value="{{ value }}"><br>
+
+{% endmacro %}

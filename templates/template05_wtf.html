@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WTF</title>
+</head>
+<body>
+
+<form method="post">
+    <label>用户名：</label><input type="text" name="user_name" placeholder="输入用户名"><br>
+    <label>密码：</label><input type="password" name="psd1"><br>
+    <label>确认密码：</label><input type="password" name="psd2"><br>
+    <input type="submit" value="注册">
+
+    <hr>
+    {% for message in get_flashed_messages() %}
+        {{ message }}
+    {% endfor %}
+
+</form>
+
+<hr>
+
+<form  method="post">
+
+     添加POST表单的csrf_token
+    {{ form.csrf_token() }}
+
+    {{ form.user_name.label }}{{ form.user_name }}<br>
+    {{ form.psd1.label }}{{ form.psd1 }}<br>
+    {{ form.psd2.label }}{{ form.psd2 }}<br>
+    {{ form.submit }}
+</form>
+
+</body>
+</html>

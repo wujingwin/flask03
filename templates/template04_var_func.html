@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+{{ request.method }}----{{ request.path }}
+<hr>
+{{ session.get('name') }}
+<hr>
+{{ config.get('DEBUG','laoilailai' )}}
+<hr>
+{{ g.name }}
+<hr>
+
+<a href="{{ url_for('index',order_id = 123 )}}">进入订单页面</a>
+
+
+<hr>
+
+{% for messgae in get_flashed_messages() %}
+    {{ messgae }}
+{% endfor %}
+</body>
+</html>
